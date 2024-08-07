@@ -35,6 +35,8 @@ public class UserDetailsImpl implements UserDetails {
 
   private String phone;
 
+  private String birthday;
+
   private String organization;//co quan
 
 
@@ -43,12 +45,13 @@ public class UserDetailsImpl implements UserDetails {
   private Collection<? extends GrantedAuthority> authorities;
 
   public UserDetailsImpl(Long id, String username, String fullName,
-                         String phone, String organization, Sex gender,
+                         String phone, String birthday, String organization, Sex gender,
       Collection<? extends GrantedAuthority> authorities) {
     this.id = id;
     this.username = username;
     this.fullName = fullName;
     this.phone = phone;
+    this.birthday = birthday;
     this.organization = organization;
     this.gender = gender;
     this.authorities = authorities;
@@ -64,6 +67,7 @@ public class UserDetailsImpl implements UserDetails {
         user.getUsername(),
         user.getFullName(),
         user.getPhone(),
+        user.getBirthday(),
         user.getOrganization(),
         user.getGender(),
         authorities);

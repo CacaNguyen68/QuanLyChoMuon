@@ -16,6 +16,9 @@ public class SignupRequest {
   @NotBlank(message = "Phone not to empty!")
   private String phone;
 
+  @NotBlank(message = "Birthday not to empty!")
+  private String birthday;
+
   private String organization;//co quan
 
   @NotBlank(message = "Name not to empty!")
@@ -92,5 +95,13 @@ public class SignupRequest {
 
   public void setRole(Set<String> role) {
     this.role = role;
+  }
+
+  public String getBirthday() {
+    return birthday;
+  }
+
+  public void setBirthday(String birthday) {
+    this.birthday = birthday;
   }
 }

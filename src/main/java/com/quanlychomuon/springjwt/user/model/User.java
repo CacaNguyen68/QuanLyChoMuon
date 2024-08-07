@@ -33,6 +33,10 @@ public class User extends DateAudit {
   @NotBlank(message = "Phone not to empty!")
   private String phone;
 
+  @Column(name = "birthday", nullable = false)
+  @NotBlank(message = "Birthday not to empty!")
+  private String birthday;
+
   @Column(name = "organization", nullable = false)
   private String organization;//co quan
 
@@ -60,10 +64,11 @@ public class User extends DateAudit {
   public User() {
   }
 
-  public User(String username, String password, String phone, String organization, String fullName, Sex gender, String note, String image) {
+  public User(String username, String password, String phone, String birthday, String organization, String fullName, Sex gender, String note, String image) {
     this.username = username;
     this.password = password;
     this.phone = phone;
+    this.birthday = birthday;
     this.organization = organization;
     this.fullName = fullName;
     this.gender = gender;
@@ -155,5 +160,13 @@ public class User extends DateAudit {
 
   public void setImage(String image) {
     this.image = image;
+  }
+
+  public String getBirthday() {
+    return birthday;
+  }
+
+  public void setBirthday(String birthday) {
+    this.birthday = birthday;
   }
 }
